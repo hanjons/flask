@@ -1,32 +1,74 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cloudtype - Flask</title>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" rel="stylesheet" type="text/css" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
-  <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오더히어로 - 식자재 주문의 새로운 기준</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6600;
+            color: #fff;
+            padding: 15px 25px;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .cta-button:hover {
+            background-color: #e55d00;
+        }
+        .image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-<div class="hero min-h-screen bg-base-200">
-  <div class="hero-content flex-col lg:flex-row-reverse">
-    <img src="{{ url_for('static', filename='img/flask.webp') }}" class="w-36 rounded-lg md:ml-5 lg:ml-5"  alt="flask"/>
-    <div>
-      <h1 class="text-5xl font-bold">Flask</h1>
-      <p class="py-6">클라우드타입에서 배포한 Flask 어플리케이션입니다.</p>
-      <button type="button" onclick="window.open('https://github.com/cloudtype-examples/java-springboot')" class="btn btn-outline rounded">
-        GitHub
-      </button>
-      <button type="button" onclick="window.open('https://docs.cloudtype.io/')" class="btn btn-outline rounded">
-        Docs
-      </button>
-      <button type="button" onclick="window.open('https://discord.gg/U7HX4BA6hu')" class="btn btn-outline rounded">
-        Discord
-      </button>
+    <div class="container">
+        <img src="https://source.unsplash.com/600x300/?vegetables,food" alt="식자재 이미지" class="image">
+        <h1>식자재 주문, 이제는 오더히어로!</h1>
+        <p>빠르고 편리한 식자재 주문 플랫폼, 오더히어로를 경험해보세요.<br>쉽고 간편하게 원하는 식자재를 주문하세요.</p>
+        <h2>최적의 식자재 비교 서비스</h2>
+        <img src="https://source.unsplash.com/600x300/?market,groceries" alt="식자재 비교" class="image">
+        <p>여러 공급업체의 가격과 품질을 한눈에 비교하고 <br> 가장 적합한 식자재를 선택하세요.</p>
+        <h2>추천 이벤트</h2>
+        <img src="./imgs/cou.png" alt="쿠폰 이미지" class="image">
+        <p>추천인과 추천인 코드에 <strong>'하이퍼스타1'</strong>을 입력하면 <br> 쿠폰 25,000원이 증정됩니다!</p>
+        <form action="/submit" method="post">
+            <label for="store_name">업장명:</label>
+            <input type="text" id="store_name" name="store_name" required>
+            <br>
+            <label for="contact">연락처:</label>
+            <input type="text" id="contact" name="contact" required>
+        
+            <button type="submit">제출하기</button>
+        </form>
+        
+        <a href="#" class="cta-button">지금 가입하고 시작하기</a>
+
     </div>
-  </div>
-</div>
 </body>
 </html>
